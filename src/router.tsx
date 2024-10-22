@@ -1,6 +1,7 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
-import Layout from "./pages/Layout";
 import Countries, { loader as countriesLoader } from "./pages/Countries";
+import Country, { loader as countryLoader } from "./pages/Country";
+import Layout from "./pages/Layout";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,11 @@ export const router = createBrowserRouter([
         path: "",
         element: <Countries />,
         loader: countriesLoader,
+      },
+      {
+        path: ":country",
+        element: <Country />,
+        loader: countryLoader,
       },
     ],
   },
